@@ -3,7 +3,7 @@ on: [push]
 jobs:
     cypress-run:
         runs-on: ubuntu-20.04
-        ste´s:
+        steps:
             - name: Checkout
             uses: actions/checkout@v2
             #install NPM dependecies,cache them correctly
