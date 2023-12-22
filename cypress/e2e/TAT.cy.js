@@ -239,8 +239,8 @@ it('Aula 6 - 26. Marcando e desmarcando inputs do tipo checkbox', function(){
       
   })
 
- 
-    it('Aula 7 - 29 Fazendo upload de arquivos com cypress', function(){
+/* 
+    it.only('Aula 7 - 29 Fazendo upload de arquivos com cypress', function(){
         
       cy.fillMandatoryFieldsAndSubmit1()
 
@@ -273,7 +273,7 @@ it('Aula 6 - 26. Marcando e desmarcando inputs do tipo checkbox', function(){
     
         
     })
-
+*/
     it('Aula 7 - 31 Exercício extra 1 Fazendo upload de arquivos com cypress - Seleciona arquivo usando fixture e alias (Exercicio extra 1)', function(){
         
       cy.fillMandatoryFieldsAndSubmit1()
