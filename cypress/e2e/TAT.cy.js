@@ -302,10 +302,19 @@ it('Aula 6 - 26. Marcando e desmarcando inputs do tipo checkbox', function(){
         .click()
         
         })
-    it.only('Aula 9 - EX - simulando dispositivos com viewport (devices móveis)',function(){
+    it('Aula 9 - EX - simulando dispositivos com viewport (devices móveis)',function(){
 
     
     })
+    
+    it('Test_commit', function(){
+        
+      cy.fillMandatoryFieldsAndSubmit1()
+      cy.get('#privacy a')
+        .invoke ('removeAttr', 'target')
+        .click()
+        
+        })
 
   })
 
