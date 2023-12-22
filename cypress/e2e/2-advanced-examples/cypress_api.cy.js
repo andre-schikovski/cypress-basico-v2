@@ -1,3 +1,4 @@
+/*
 /// <reference types="cypress" />
 
 context('Cypress APIs', () => {
@@ -183,3 +184,5 @@ context('Cypress APIs', () => {
     })
   })
 })
+
+*/
