@@ -1,9 +1,11 @@
 /// <reference types="Cypress" />
 
-
+import cypress from "cypress"
 
 describe ('Central de Atendimento ao cliente TAT', function() {
-    //Executar antes de cada teste esta rotina.
+    
+  
+   
     beforeEach(function() {
         cy.visit('./src/index.html')
     
@@ -17,8 +19,9 @@ describe ('Central de Atendimento ao cliente TAT', function() {
     })
 
     //Inserir dados nos campos de texto da página
-    it ('Inserir e validar campos obrigatórios', function() {
-              
+    it('Inserir e validar campos obrigatórios', function() {
+
+      
         cy.get('#firstName')
           .should('be.visible')
           .type('André Luiz')
@@ -39,6 +42,9 @@ describe ('Central de Atendimento ao cliente TAT', function() {
 
         //Obter o campo a ser validado a partir de uma classe (usar sempre '.' antes do nome da classe)
         cy.get('.success').should('be.visible')
+
+
+        cy.get('.success').should('not.be.visible')
     })
 
     //Lidando com delay do input de texto
@@ -70,7 +76,7 @@ describe ('Central de Atendimento ao cliente TAT', function() {
 
     })
 // Validar fluxos alternativos (Msg erro campo obrigatório)
-    it ('Validar classe de erro (Msg campo obrigatório)', function() {
+    it('Validar classe de erro (Msg campo obrigatório)', function() {
               
         cy.get('#firstName')
           .should('be.visible')
@@ -302,11 +308,27 @@ it('Aula 6 - 26. Marcando e desmarcando inputs do tipo checkbox', function(){
         .click()
         
         })
-    it('Aula 9 - EX - simulando dispositivos com viewport (devices móveis)',function(){
+    it('Aula 12 - 50 Exibe e esconde as mensagens de sucesso e erro usando o invoke', function(){
+        
+        cy.get('.success')
+        .should('not.be.visible')
+        .invoke ('show')
+        .should('be.visible')
+        .and ('contain', 'Mensagem enviada com sucesso.')
+        .invoke('hide')
+        .should('not.be.visible')
 
-    
-    })
-    
+        cy.get('.error')
+        .should('not.be.visible')
+        .invoke ('show')
+        .should('be.visible')
+        .and ('contain', 'Valide os campos obrigatórios!')
+        .invoke('hide')
+        .should('not.be.visible')
+
+            
+     }) 
+   
 
   })
 
