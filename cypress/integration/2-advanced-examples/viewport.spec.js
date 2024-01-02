@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+
 context('Viewport', () => {
   beforeEach(() => {
     cy.visit('https://example.cypress.io/commands/viewport')
@@ -53,6 +54,6 @@ context('Viewport', () => {
     cy.wait(200)
 
     // The viewport will be reset back to the default dimensions
-    // in between tests (the  default can be set in cypress.config.{js|ts})
+    // in between tests (the  default can be set in cypress.json)
   })
 })

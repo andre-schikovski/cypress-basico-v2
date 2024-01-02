@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+// remove no check once Cypress.sinon is typed
+// https://github.com/cypress-io/cypress/issues/6720
 
 context('Spies, Stubs, and Clock', () => {
   it('cy.spy() - wrap a method in a spy', () => {
@@ -113,10 +115,12 @@ context('Spies, Stubs, and Clock', () => {
       .withArgs(Cypress.sinon.match.number).throws(new Error('Invalid name'))
 
     expect(greeter.greet('World')).to.equal('Hi')
+    // @ts-ignore
     expect(() => greeter.greet(42)).to.throw('Invalid name')
     expect(greeter.greet).to.have.been.calledTwice
 
     // non-matched calls goes the actual method
+    // @ts-ignore
     expect(greeter.greet()).to.equal('Hello, undefined!')
   })
 
@@ -154,7 +158,7 @@ context('Spies, Stubs, and Clock', () => {
     expect(spy).to.be.calledWith(Cypress.sinon.match.in([1, 2, 3]), 3)
 
     /**
-     * Returns true if the given number is even
+     * Returns true if the given number is event
      * @param {number} x
      */
     const isEven = (x) => x % 2 === 0
