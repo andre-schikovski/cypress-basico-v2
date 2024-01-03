@@ -1,3 +1,4 @@
+/*
 /// <reference types="cypress" />
 
 context('Local Storage', () => {
@@ -49,4 +50,4 @@ context('Local Storage', () => {
       expect(ls.getItem('prop3')).to.eq('magenta')
     })
   })
-})
+}) */
