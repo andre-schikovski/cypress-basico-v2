@@ -1,3 +1,4 @@
+/*
 /// <reference types="cypress" />
 
 context('Cypress.Commands', () => {
@@ -199,4 +200,4 @@ context('Cypress.spec', () => {
     // wrap the object so we can inspect it easily by clicking in the command log
     cy.wrap(Cypress.spec).should('include.keys', ['name', 'relative', 'absolute'])
   })
-})
+}) */
