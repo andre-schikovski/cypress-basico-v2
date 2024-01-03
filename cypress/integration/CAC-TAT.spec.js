@@ -327,7 +327,7 @@ it('Aula 6 - 26. Marcando e desmarcando inputs do tipo checkbox', function(){
 
             
      }) 
-it.only('Preencha a área de texto usando o comando invoke', function () {
+it('Preencha a área de texto usando o comando invoke', function () {
   
   const longText = Cypress._.repeat('0123456789',20)
 
@@ -338,5 +338,32 @@ it.only('Preencha a área de texto usando o comando invoke', function () {
 
   
 })
+
+it('Faz uma requisição HTTP', function(){
+  cy.request('https://cac-tat.s3.eu-central-1.amazonaws.com/index.html')
+    .should(function(Response){
+      const{status, statusText, body} = Response
+      expect(status).to.equal(200)
+      expect(statusText).to.equal('OK')
+      expect(body).to.include('CAC TAT')
+    })
+
+  
+})
+
+
+it.only('Encontre o Gato', function(){
+  cy.get('#cat')
+    .invoke('show')
+    .should('be.visible')
+    
+  cy.get('#title')
+    .invoke('text', 'CAT TAT ^^')  
+
+
+
+})
+
+
 
   })
